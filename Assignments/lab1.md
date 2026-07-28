@@ -12,7 +12,7 @@ This is an individual project. All hand-ins are electronic. Clarifications and c
 
 ## Handout Instructions
 
-Start by downloading `datalab-handout1.tar` and copying it to a (protected) directory on ecc-linux or another Linux x86_64 machine in which you plan to do your work.
+Start by downloading `datalab-handout1.tar` from Canvas and copying it to a (protected) directory on ecc-linux or another Linux x86_64 machine in which you plan to do your work. To securely transfer files between a remote host (like ecc-linux) and your local computer, use the `scp` command or another option that supports SFTP (secure file transfer protocol).
 
 Create a folder for your lab:
 ```bash
@@ -117,7 +117,7 @@ $ ./driver.pl
 ```
 I will use **driver.pl** to grade your solution. If it fails to run you can almost guarantee that you will be losing significant credit on the assignment, if not getting a 0.
 
-## Handin Instructions
+## Hand-in Instructions
 Submit your bits.c file to INGInious.
 
 ## Advice
