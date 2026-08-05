@@ -3,6 +3,7 @@
 Understanding Buffer Overflow Bugs
 
 ## 1 Introduction
+
 This assignment involves generating a total of five attacks on two programs having different security vulnerabilities. Outcomes you will gain from this lab include:
 * You will learn different ways that attackers can exploit security vulnerabilities when programs do not safeguard themselves well enough against buffer overflows.
 * Through this, you will get a better understanding of how to write programs that are more secure, as well as some of the features provided by compilers and operating systems to make programs less vulnerable.
@@ -52,7 +53,7 @@ IMPORTANT NOTE: The lab will work on *ecc-linux*, so it is recommended that you 
 ### 2.2 Important Points
 
 Here is a summary of some important rules regarding valid solutions for this lab. These points will not make much sense when you read this document for the first time. They are presented here as a central reference of rules once you get started.
-* You must do the assignment on a machine that is similar to the one that generated your targets.
+* You must do the assignment on a machine that is similar to the one that generated your targets (*ecc-linux* works for this).
 * Your solutions may not use attacks to circumvent the validation code in the programs. Specifically, any address you incorporate into an attack string for use by a `ret` instruction should be to one of the following destinations:
   - The addresses for functions `touch1`, `touch2`, or `touch3`.
   - The address of your injected code
@@ -138,7 +139,7 @@ Figure 1: Summary of attack lab phases
 | 2     | CTARGET | 2     | CI     | `touch2` | 25     |
 | 3     | CTARGET | 3     | CI     | `touch3` | 25     |
 | 4     | RTARGET | 2     | ROP    | `touch2` | 35     |
-| 5     | RTARGET | 3     | ROP    | `touch3` | 5      |
+| 5     | RTARGET | 3     | ROP    | `touch3` | 10     |
 
 > * CI: Code injection
 > * ROP: Return-oriented programming
@@ -179,7 +180,7 @@ When `getbuf` executes its return statement (line 5 of `getbuf`), the program or
 Your task is to get CTARGET to execute the code for `touch1` when `getbuf` executes its return statement, rather than returning to `test`. Note that your exploit string may also corrupt parts of the stack not directly related to this stage, but this will not cause a problem, since `touch1` causes the program to exit directly.
 
 **Some Advice**:
-* All the information you need to devise your exploit string for this level can be determined by examining a disassembled version of CTARGET. Use `objdump -d` to get this dissembled version.
+* All the information you need to devise your exploit string for this level can be determined by examining a disassembled version of CTARGET. Use `objdump -d` to get this disassembled version, or use GDB and the `disassemble` command to get the disassembled version of specific functions.
 * The idea is to position a byte representation of the starting address for `touch1` so that the `ret` instruction at the end of the code for `getbuf` will transfer control to `touch1`.
 * Be careful about byte ordering.
 * You might want to use GDB to step the program through the last few instructions of `getbuf` to make sure it is doing the right thing.
@@ -246,10 +247,6 @@ Within the file `ctarget` there is code for functions `hexmatch` and `touch3` ha
 22 }
 ```
 
-![Figure 2: Setting up sequence of gadgets for execution.](/Assignments/Images/AttackLabFig2.png)
-
-Figure 2: Setting up sequence of gadgets for execution. Byte value `0xc3` encodes the `ret` instruction.
-
 Your task is to get CTARGET to execute the code for `touch3` rather than returning to `test`. You must make it appear to `touch3` as if you have passed a string representation of your cookie as its argument.
 
 **Some Advice**:
@@ -264,6 +261,10 @@ Performing code-injection attacks on program RTARGET is much more difficult than
 
 * It uses randomization so that the stack positions differ from one run to another. This makes it impossible to determine where your injected code will be located.
 * It marks the section of memory holding the stack as non-executable, so even if you could set the program counter to the start of your injected code, the program would fail with a segmentation fault.
+
+![Figure 2: Setting up sequence of gadgets for execution.](/Assignments/Images/AttackLabFig2.png)
+
+Figure 2: Setting up sequence of gadgets for execution. Byte value `0xc3` encodes the `ret` instruction.
 
 Fortunately, clever people have devised strategies for getting useful things done in a program by executing existing code, rather than injecting new code. The most general form of this is referred to as *return-oriented programming* (ROP) [1, 2]. The strategy with ROP is to identify byte sequences within an existing program that consist of one or more instructions followed by the instruction `ret`. Such a segment is referred to as a *gadget*. Figure 2 illustrates how the stack can be set up to execute a sequence of `n` gadgets. In this figure, the stack contains a sequence of gadget addresses. Each gadget consists of a series of instruction bytes, with the final one being `0xc3`, encoding the `ret` instruction. When the program executes a `ret` instruction starting with this configuration, it will initiate a chain of gadget executions, with the `ret` instruction at the end of each gadget causing the program to jump to the beginning of the next.
 
@@ -338,13 +339,13 @@ farm also contain 2-byte instructions that serve as *functional nops*, i.e., the
 
 **Some Advice**:
 * You’ll want to review the effect a `movl` instruction has on the upper 4 bytes of a register, as is described on page 183 of the text.
-* The official solution requires eight gadgets (not all of which are unique).
+* The official solution requires eight or more gadgets (not all of which are unique).
 
 Good luck and have fun!
 
-## A) Submitting Your Assignment
+## Submitting Your Assignment
 
-You should submit a .tar.gz with text files with your hex solutions for each phase that you completed (1-5 separate files). Make sure you use an easily identifiable naming convention for your solution files for example:
+You should submit to INGInious a .tar.gz with text files with your **hex-formatted string solutions** for each phase that you completed (1-5 separate files). Make sure you use an easily identifiable naming convention for your solution files for example, `sol1.txt`, `sol2.txt`, etc, or:
 
 ```
 ctarget.l3 # text file for level3 of code injection targeted code
@@ -353,7 +354,7 @@ rtarget.l2 # text file for level2 of return oriented programming targeted code.
 
 This will allow me to grade your assignments offline in the even that the online grader isn't successfully able to grade your project.
 
-## B) Using HEX2RAW
+## Appendix A: Using HEX2RAW
 
 HEX2RAW takes as input a *hex-formatted* string. In this format, each byte value is represented by two hex digits. For example, the string “012345” could be entered in hex format as `30 31 32 33 34 35 00`. (Recall that the ASCII code for decimal digit `x` is `0x3x`, and that the end of a string is indicated by a
 null byte.)
@@ -398,7 +399,7 @@ unix> ./ctarget -i exploit-raw.txt
 
 This approach also can be used when running from within GDB.
 
-## C) Generating Byte Codes
+## Appendix B: Generating Byte Codes
 
 Using GCC as an assembler and OBJDUMP as a disassembler makes it convenient to generate the byte codes for instruction sequences. For example, suppose you write a file `example.s` containing the following assembly code:
 
@@ -439,7 +440,7 @@ From this file, you can get the byte sequence for the code:
 68 ef cd ab 00 48 83 c0 11 89 c2
 ```
 
-This string can then be passed through HEX2RAW to generate an input string for the target programs. Alternatively, you can edit 1example.d1 to omit extraneous values and to contain C-style comments for readability, yielding:
+This string can then be passed through HEX2RAW to generate an input string for the target programs. Alternatively, you can edit `example.d` to omit extraneous values and to contain C-style comments for readability, yielding:
 
 ```
 68 ef cd ab 00    /* pushq  $0xabcdef   */
