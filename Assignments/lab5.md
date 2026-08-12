@@ -17,7 +17,7 @@ You will want to study Sections 3.10.3 and 3.10.4 of the CS:APP3e book as refere
 
 ## 2 Logistics
 
-As usual, this is an individual project. You will generate attacks for target programs that are custom generated for you.
+As usual, this is an individual project. You will generate attacks for target programs that are custom generated for you. Clarifications and corrections will be posted in this Git repo or on Canvas.
 
 ### 2.1 Getting Files
 
@@ -345,7 +345,7 @@ Good luck and have fun!
 
 ## Submitting Your Assignment
 
-You should submit to INGInious a .tar.gz with text files with your **hex-formatted string solutions** for each phase that you completed (1-5 separate files). Make sure you use an easily identifiable naming convention for your solution files for example, `sol1.txt`, `sol2.txt`, etc, or:
+You should submit to INGInious a .tar.gz that contains text files with your **hex-formatted string solutions** for each phase that you completed (1-5 separate files). Make sure you use an easily identifiable naming convention for your solution files, e.g. `sol1.txt`, `sol2.txt`, etc, or:
 
 ```
 ctarget.l3 # text file for level3 of code injection targeted code
@@ -353,6 +353,8 @@ rtarget.l2 # text file for level2 of return oriented programming targeted code.
 ```
 
 This will allow me to grade your assignments offline in the even that the online grader isn't successfully able to grade your project.
+
+After the Attack Lab is due, you will get 10 points for correctly answering in-class quiz questions about what is happening in some of the phases. Should you not solve them all you’ll only be responsible for answering questions related to the phases you pass. If you do not submit anything for the Attack Lab, you will not receive credit for the in-class quiz.
 
 ## Appendix A: Using HEX2RAW
 

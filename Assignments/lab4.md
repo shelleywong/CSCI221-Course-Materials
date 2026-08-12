@@ -8,6 +8,9 @@ The nefarious Dr. Evil has planted a slew of “binary bombs” on our class mac
 
 There are too many bombs for us to deal with, so we are giving each student a bomb to defuse. Your mission, which you have no choice but to accept, is to defuse your bomb before the due date. Good luck, and welcome to the bomb squad!
 
+### Logistics
+
+This is an individual project. You will diffuse your own unique bomb. Clarifications and corrections will be posted in this Git repo or on Canvas.
 
 ## Step 1: Get Your Bomb
 
@@ -30,8 +33,6 @@ Each time your bomb explodes it notifies the bomblab server, and you lose 1/2 po
 
 For the Binary Bomb lab (Part 2), you will complete 3 more phases. Phase 4 is worth 10 points. Phase 5 and Phase 6 are a little more difficult, so they are worth 15 points each, for a total of 40 points. The maximum score you can get on the Binary Bomb (Part 1 and Part 2) is 70 points. There is up to 10 points of extra credit, but how to earn it is a secret...
 
-After Binary Bomb Part 2 is due, you will get 30 points for correctly answering in class quiz questions about what is happening in some of the phases. Should you not solve them all you’ll only be responsible for answering questions related to the phases you pass.
-
 Although phases get progressively harder to defuse, the expertise you gain as you move from phase to phase should offset this difficulty. However, the last phase will challenge even the best students, so please don’t wait until the last minute to start.
 
 The bomb ignores blank input lines. If you run your bomb with a command line argument, for example,
@@ -48,7 +49,8 @@ To avoid accidentally detonating the bomb, you will need to learn how to single-
 
 This is an individual project. All hand-ins are electronic. Clarifications and corrections will be posted on the course message board.
 
-## Hand-in
+## Submitting your Assignment
+
 You should upload your solution text file, to INGInious as *solution.txt*. INGInious will have a place to provide the name/number of your bomb - this is to confirm which bomb I should use for assessment. The bomb will also notify me automatically about your progress as you work on it. For Part 2, I am focused on Phases 4, 5, and 6, but you will need to have working solutions for Phases 1-3 in order to get to these phases.
 
 You can keep track of how you are doing by looking at the class scoreboard at:
@@ -56,6 +58,8 @@ You can keep track of how you are doing by looking at the class scoreboard at:
 [https://bomblab.dixon.phd/scoreboard](https://bomblab.dixon.phd/scoreboard)
 
 This web page is updated continuously every 30 seconds to show the progress for each bomb. Let me know if it is down or doesn’t appear to be updating.
+
+After Binary Bomb Part 2 is due, you will get 10 points for correctly answering in-class quiz questions about what is happening in some of the phases. Should you not solve them all you’ll only be responsible for answering questions related to the phases you pass. If you do not submit anything for the Binary Bomb Part 2 assignment, you will not receive credit for the in-class quiz.
 
 ## Hints (Please read this!)
 

@@ -8,7 +8,7 @@ The purpose of this assignment is to become more familiar with bit-level represe
 
 ### Logistics
 
-This is an individual project. All hand-ins are electronic. Clarifications and corrections will be posted in this Git repo or on Canvas.
+This is an individual project. Clarifications and corrections will be posted in this Git repo or on Canvas.
 
 ## Handout Instructions
 
@@ -150,8 +150,11 @@ $ ./driver.pl
 ```
 I will use **driver.pl** to grade your solution. If it fails to run you can almost guarantee that you will be losing significant credit on the assignment, if not getting a 0.
 
-## Hand-in Instructions
+## Submitting your Assignment
+
 Submit your bits.c file to INGInious.
+
+After Data Lab Part 2 is due, you will get 10 points for correctly answering in-class quiz questions about the bit puzzles and bit-level representations of integers. If you do not submit anything for Data Lab Part 2, you will not receive credit for the in-class quiz.
 
 ## Advice
 * Using `printf` for debugging can be helpful, but you should not include the <stdio.h> header file in your bits.c file, as it confuses `dlc` and results in some non-intuitive error messages. You will still be able to use `printf` in your bits.c file for debugging without including the <stdio.h> header, although gcc will print a warning that you can ignore.
