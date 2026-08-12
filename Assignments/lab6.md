@@ -96,7 +96,7 @@ The cycle counter measures times using the CPU clock of your computer. It is fai
 
 Your job is going to be to improve the performance of this application using techniques detailed in Chapter 5 of the CS:APP3e textbook. You’ll be using two images (*boats.bmp* and *blocks-small.bmp*) The first image is fairly small (useful for quickly testing ideas) and the second image is larger (and used for grading / evaluation).
 
-![Optimization Meme](/Assignments/Images/optimization.png)
+![Optimization Meme](/Assignments/Images/optimization.jpg)
 
 You can compile your program with the provided Makefile and the `make` command.
 You may need to modify the Makefile to change compiler options or the like. The Makefile provides a `make clean` rule to delete any temporary files or images.
