@@ -16,13 +16,13 @@ Start by downloading `datalab-handout1.tar` from Canvas and copying it to a (pro
 
 Create a folder for your lab:
 ```bash
-mkdir lab1
+$ mkdir lab1
 ```
 
 Then give the command to extract the files from the provided tar file into your `lab1` folder:
 
 ```bash
-  $ tar -xvf datalab-handout1.tar -C lab1 --strip-components=1
+$ tar -xvf datalab-handout1.tar -C lab1 --strip-components=1
 ```
 
 This will cause a number of files to be unpacked in the directory. The only file you will be modifying and turning in is **bits.c**.
