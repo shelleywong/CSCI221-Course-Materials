@@ -1,4 +1,4 @@
-# Lab 1: Data Lab (Part 2)
+# Lab 2: Data Lab (Part 2)
 
 Learning Bit Magic
 
