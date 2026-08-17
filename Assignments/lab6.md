@@ -28,7 +28,7 @@ This will cause a number of files to be unpacked in a `perflab-setup` directory.
 - cs1300bmp.cc
 - cs1300bmp.h
 
-It is recommended that you create a second copy of the original files so you can filter the pictures and check that they are identical to the filtered results your solution generates as they have to be **identical** for you to get any credit for this assignment. I've provided a python script in the project repo that will do picture comparisons for you.
+It is recommended that you create a second copy of the original files so you can filter the pictures and check that they are identical to the filtered results your solution generates as they have to be **identical** for you to get any credit for this assignment. I've provided a python script (picturediff.py) in the project repo that will do picture comparisons for you.
 
 
 ## Lab Description
@@ -139,6 +139,46 @@ Resulting score is 37
 This would result in an average of 2851 cycles per second. Scoring is based on the CPE results for the *blocks-small.bmp* image and will be based on how your project scores on the *csciperfproject* machine's results. INGInious is set up to run your submissions on a *csciperfproject* machine, so you can test your code by submitting it to INGInious. The perf machine will run your code on a Raspberry Pi 2 with a Broadcom BCM2836 Arm Coretex-A7 Quad Core Processor running at 900Mhz.
 
 Your measured time needs to include any active processing you do to the image after it is read in and before it is written out. You’re free to go “whole hog” on any optimization that might work, **as long as it works with all the test images and filters included in the assignment.** Your modified code **does not** need to handle any filters or images not included in the evaluation suite. This means you can go ahead and e.g. change the matrix layout in the BMP image library, replace the Filter library, etc. However, you’d be well advised to make certain those changes are important and effective before you sink a lot of time. The most “extreme” solution is to use optimized functions for every filter. The *perf* machines also have four cores and you could use the OpenMP language extensions to try to use all the cores. Some students have used these methods in the past, but you’re well advised to go for the easy low-hanging fruit before tackling the most aggressive optimization.
+
+### Test your filtered images vs the original filtered images
+
+You need to check that your filtered images are **identical** to the original filtered image files.
+
+Before you've made any changes to the code, you should make a copy of the `perflab-setup` directory (e.g. `cp -r perflab-setup perflab-setup-original`) and run the `Judge` program on all of the images, so you have the correct results with the unoptimized program.
+
+I've provided a python script (`picturediff.py`) in the project repo that will do picture comparisons for you. Steps to use the Python script (bash):
+
+* Create a [virtual environment](https://docs.python.org/3/library/venv.html). In this case, we've named the virtual environment `venv`:
+
+```bash
+python -m venv venv
+```
+
+* Activate the virtual environment:
+```bash
+source venv/bin/activate
+```
+
+* Recreate the environment and install needed packages:
+```bash
+pip install -r requirements.txt
+```
+
+* Run the picturediff.py script:
+  * Usage: `python picturediff.py <picture1> <picture2>`
+  * Example:
+
+```
+python picturediff.py filtered-avg-blocks-small.bmp ../perflab-setup-original/filtered-avg-blocks-small.bmp
+```
+
+  * You are looking for the output to be: `0.0`
+    * If you see any other number, there are diffs between your filtered images and the images filtered with the original unoptimized code.
+
+* When you're done, you can exit the virtual environment:
+```
+deactivate
+```
 
 ## Logistics
 The only “hand-in” will be electronic. Any clarifications and revisions to the assignment will be posted on Canvas or in this assignment writeup.
