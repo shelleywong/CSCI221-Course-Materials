@@ -115,7 +115,7 @@ $ ./dlc -e bits.c
 ```bash
 $ ./driver.pl
 ```
-I will use **driver.pl** to grade your solution. If it fails to run you can almost guarantee that you will be losing significant credit on the assignment, if not getting a 0.
+I will use **driver.pl** to grade your solution. If you are not able to run driver.pl in your environment, focus on making sure your program runs successfully with `btest` and `dlc`.
 
 ## Submitting your Assignment
 
