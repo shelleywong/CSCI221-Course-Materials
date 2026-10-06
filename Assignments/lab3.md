@@ -78,6 +78,12 @@ After Binary Bomb Part 1 is due, you will get 10 points for correctly answering 
 
 ## Hints (Please read this!)
 
+If you get a "permission denied" error when trying to execute the bomb, check if the bomb is executable using `ls -al` -- you should see `-rwxr-xr-x` next to the `bomb`. If you don't see the `x`'s, you can make the bomb executable:
+
+```
+chmod +x bomb
+```
+
 There are many ways of defusing your bomb. You can examine it in great detail without ever running the program, and figure out exactly what it does. This is a useful technique, but it is not always easy to do. You can also run it under a debugger, watch what it does step by step, and use this information to defuse it. This is probably the fastest way of defusing it.
 
 We do make one request, please do not use brute force! You could write a program that will try every possible key to find the right one. But this is no good for several reasons:
@@ -85,7 +91,6 @@ We do make one request, please do not use brute force! You could write a program
  * You lose 1/2 point (up to a max of 20 points) every time you guess incorrectly and the bomb explodes.
   * Every time you guess wrong, a message is sent to the bomblab server. You could very quickly saturate the network with these messages, and cause the system administrators to revoke your computer access.
   * We haven’t told you how long the strings are, nor have we told you what characters are in them. Even if you made the (incorrect) assumptions that they all are less than 80 characters long and only contain letters, then you will have 2680 guesses for each phase. This will take a very long time to run, and you will not get the answer before the assignment is due.
-
 
 There are many tools which are designed to help you figure out both how programs work, and what is wrong when they don’t work. Here is a list of some of the tools you may find useful in analyzing your bomb, and hints on how to use them.
   * *gdb*
