@@ -354,7 +354,7 @@ rtarget.l2 # text file for level2 of return oriented programming targeted code.
 
 This will allow me to grade your assignments offline in the even that the online grader isn't successfully able to grade your project.
 
-After the Attack Lab is due, you will get 10 points for correctly answering in-class quiz questions about what is happening in some of the phases. Should you not solve them all you’ll only be responsible for answering questions related to the phases you pass. If you do not submit anything for the Attack Lab, you will not receive credit for the in-class quiz.
+After the Attack Lab is due, you will get some points for correctly answering in-class quiz questions about what is happening in some of the phases (generally worth between 10-20% of the total points). Should you not solve them all you’ll only be responsible for answering questions related to the phases you pass. If you do not submit anything for the Attack Lab, you will not receive credit for the in-class quiz.
 
 ## Appendix A: Using HEX2RAW
 

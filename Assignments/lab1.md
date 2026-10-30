@@ -121,7 +121,7 @@ I will use **driver.pl** to grade your solution. If you are not able to run driv
 
 Submit your bits.c file to INGInious.
 
-After Data Lab Part 1 is due, you will get 10 points for correctly answering in-class quiz questions about the bit puzzles and bit-level representations of integers. If you do not submit anything for Data Lab Part 1, you will not receive credit for the in-class quiz.
+After Data Lab Part 1 is due, you will get some points for correctly answering in-class quiz questions about the bit puzzles and bit-level representations of integers (generally worth between 10-20% of the total points). If you do not submit anything for Data Lab Part 1, you will not receive credit for the in-class quiz.
 
 ## Advice
 * Using `printf` for debugging can be helpful, but you should not include the <stdio.h> header file in your bits.c file, as it confuses `dlc` and results in some non-intuitive error messages. You will still be able to use `printf` in your bits.c file for debugging without including the <stdio.h> header, although gcc will print a warning that you can ignore.

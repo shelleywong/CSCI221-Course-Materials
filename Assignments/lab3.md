@@ -74,7 +74,7 @@ You can keep track of how you are doing by looking at the class scoreboard at:
 
 This web page is updated continuously every 30 seconds to show the progress for each bomb. Let me know if it is down or doesn’t appear to be updating.
 
-After Binary Bomb Part 1 is due, you will get 10 points for correctly answering in-class quiz questions about what is happening in some of the phases. Should you not solve them all you’ll only be responsible for answering questions related to the phases you pass. If you do not submit anything for the Binary Bomb Part 1 assignment, you will not receive credit for the in-class quiz.
+After Binary Bomb Part 1 is due, you will get some points for correctly answering in-class quiz questions about what is happening in some of the phases (generally worth between 10-20% of the total points). Should you not solve them all you’ll only be responsible for answering questions related to the phases you pass. If you do not submit anything for the Binary Bomb Part 1 assignment, you will not receive credit for the in-class quiz.
 
 ## Hints (Please read this!)
 
